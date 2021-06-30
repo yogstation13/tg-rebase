@@ -41,6 +41,8 @@
 	mask = /obj/item/clothing/mask/fakemoustache/italian
 	backpack_contents = list(/obj/item/sharpener = 1)
 
+	plasmaman_uniform = /obj/item/clothing/under/plasmaman/chef
+
 /datum/outfit/job/cook/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	var/datum/job/cook/J = SSjob.GetJobType(jobtype)

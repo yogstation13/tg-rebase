@@ -40,3 +40,5 @@
 	uniform = /obj/item/clothing/under/rank/cargotech
 	l_hand = /obj/item/export_scanner
 
+	plasmaman_uniform = /obj/item/clothing/under/plasmaman/cargo
+

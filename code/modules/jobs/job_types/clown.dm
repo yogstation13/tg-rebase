@@ -39,6 +39,10 @@
 		/obj/item/reagent_containers/food/snacks/grown/banana = 1,
 		/obj/item/instrument/bikehorn = 1,
 		)
+		
+	plasmaman_head = /obj/item/clothing/head/helmet/space/plasmaman/clown
+	plasmaman_uniform = /obj/item/clothing/under/plasmaman/clown
+	plasmaman_box = /obj/item/storage/box/hug/survival/plasmaman
 
 	implants = list(/obj/item/implant/sad_trombone)
 

@@ -98,6 +98,9 @@ GLOBAL_LIST_INIT(available_depts_eng, list(ENG_DEPT_MEDICAL, ENG_DEPT_SCIENCE, E
 	head = /obj/item/clothing/head/hardhat
 	r_pocket = /obj/item/t_scanner
 
+	plasmaman_head = /obj/item/clothing/head/helmet/space/plasmaman/engineering
+	plasmaman_uniform = /obj/item/clothing/under/plasmaman/engineering
+	
 	backpack = /obj/item/storage/backpack/industrial
 	satchel = /obj/item/storage/backpack/satchel/eng
 	duffelbag = /obj/item/storage/backpack/duffelbag/engineering

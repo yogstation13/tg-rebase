@@ -35,6 +35,9 @@
 		/obj/item/barcodescanner = 1
 	)
 
+	plasmaman_uniform = /obj/item/clothing/under/plasmaman/curator
+	plasmaman_head = /obj/item/clothing/head/helmet/space/plasmaman/curator
+
 /datum/outfit/job/curator/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 

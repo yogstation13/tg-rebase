@@ -34,3 +34,5 @@
 	glasses = /obj/item/clothing/glasses/regular
 	belt = /obj/item/pda
 	ears = /obj/item/radio/headset/headset_med
+
+	plasmaman_uniform = /obj/item/clothing/under/plasmaman/enviroslacks

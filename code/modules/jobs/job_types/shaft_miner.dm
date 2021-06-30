@@ -50,6 +50,9 @@
 		/obj/item/mining_voucher=1,\
 		/obj/item/stack/marker_beacon/ten=1)
 
+	plasmaman_uniform = /obj/item/clothing/under/plasmaman/mining
+	plasmaman_box = /obj/item/storage/box/survival_mining/plasmaman
+	
 	backpack = /obj/item/storage/backpack/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	duffelbag = /obj/item/storage/backpack/duffelbag

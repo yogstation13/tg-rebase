@@ -38,6 +38,9 @@
 	suit =  /obj/item/clothing/suit/toggle/labcoat/virologist
 	suit_store =  /obj/item/flashlight/pen
 
+	plasmaman_head = /obj/item/clothing/head/helmet/space/plasmaman/viro
+	plasmaman_uniform = /obj/item/clothing/under/plasmaman/viro
+
 	backpack = /obj/item/storage/backpack/virology
 	satchel = /obj/item/storage/backpack/satchel/vir
 	duffelbag = /obj/item/storage/backpack/duffelbag/med

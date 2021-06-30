@@ -44,5 +44,8 @@
 	satchel = /obj/item/storage/backpack/satchel/chem
 	duffelbag = /obj/item/storage/backpack/duffelbag/med
 
+	plasmaman_head = /obj/item/clothing/head/helmet/space/plasmaman/blue
+	plasmaman_uniform = /obj/item/clothing/under/plasmaman/chemist
+
 	chameleon_extras = /obj/item/gun/syringe
 

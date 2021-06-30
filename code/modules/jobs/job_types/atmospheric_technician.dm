@@ -40,6 +40,9 @@
 	uniform = /obj/item/clothing/under/rank/atmospheric_technician
 	r_pocket = /obj/item/analyzer
 
+	plasmaman_head = /obj/item/clothing/head/helmet/space/plasmaman/engineering
+	plasmaman_uniform = /obj/item/clothing/under/plasmaman/atmospherics
+	
 	backpack = /obj/item/storage/backpack/industrial
 	satchel = /obj/item/storage/backpack/satchel/eng
 	duffelbag = /obj/item/storage/backpack/duffelbag/engineering

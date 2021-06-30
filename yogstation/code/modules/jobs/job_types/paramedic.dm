@@ -43,6 +43,10 @@
 	l_hand = /obj/item/roller
 	l_pocket = /obj/item/flashlight
 	r_pocket = /obj/item/gps
+
+	plasmaman_head = /obj/item/clothing/head/helmet/space/plasmaman/blue
+	plasmaman_uniform = /obj/item/clothing/under/plasmaman/medical
+
 	backpack = /obj/item/storage/backpack/medic
 	satchel = /obj/item/storage/backpack/satchel/med
 	duffelbag = /obj/item/storage/backpack/duffelbag/med

@@ -44,6 +44,8 @@
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	suit = /obj/item/clothing/suit/toggle/labcoat/science
 
+	plasmaman_uniform = /obj/item/clothing/under/plasmaman/science
+	
 	backpack = /obj/item/storage/backpack/science
 	satchel = /obj/item/storage/backpack/satchel/tox
 

@@ -148,6 +148,10 @@ GLOBAL_LIST_INIT(available_depts_sec, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICA
 	suit_store = /obj/item/gun/energy/disabler
 	backpack_contents = list(/obj/item/melee/baton/loaded=1)
 
+	plasmaman_uniform = /obj/item/clothing/under/plasmaman/security
+	plasmaman_head = /obj/item/clothing/head/helmet/space/plasmaman/security
+	plasmaman_box = /obj/item/storage/box/security/plasmaman
+	
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec
 	duffelbag = /obj/item/storage/backpack/duffelbag/sec

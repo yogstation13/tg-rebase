@@ -41,6 +41,9 @@
 	suit_store =  /obj/item/flashlight/pen
 	l_pocket = /obj/item/sequence_scanner
 
+	plasmaman_uniform = /obj/item/clothing/under/plasmaman/genetics
+	plasmaman_head = /obj/item/clothing/head/helmet/space/plasmaman/blue
+	
 	backpack = /obj/item/storage/backpack/genetics
 	satchel = /obj/item/storage/backpack/satchel/gen
 	duffelbag = /obj/item/storage/backpack/duffelbag/med

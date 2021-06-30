@@ -210,6 +210,10 @@
 	shoes = /obj/item/clothing/shoes/sneakers/black
 	box = /obj/item/storage/box/survival
 
+	var/plasmaman_uniform = /obj/item/clothing/under/plasmaman
+	var/plasmaman_head = /obj/item/clothing/head/helmet/space/plasmaman
+	var/plasmaman_box = /obj/item/storage/box/plasmaman
+
 	var/backpack = /obj/item/storage/backpack
 	var/satchel  = /obj/item/storage/backpack/satchel
 	var/duffelbag = /obj/item/storage/backpack/duffelbag
@@ -235,8 +239,13 @@
 		else
 			back = backpack //Department backpack
 
-	if (isplasmaman(H) && !(visualsOnly)) //this is a plasmaman fix to stop having two boxes
-		box = null
+	if (isplasmaman(H)) //this is a plasmaman fix to stop having two boxes
+		r_hand = /obj/item/tank/internals/plasmaman/belt/full
+		mask = /obj/item/clothing/mask/breath
+		box = plasmaman_box
+		head = plasmaman_head
+		uniform = plasmaman_uniform
+		
 
 	if((DIGITIGRADE in H.dna.species.species_traits) && (IS_SECURITY(H))) // Special shoes for sec, roll first to avoid defaulting
 		shoes = alt_shoes_s
@@ -273,6 +282,10 @@
 		PDA.owner = H.real_name
 		PDA.ownjob = J.title
 		PDA.update_label()
+	
+	if(isplasmaman(H))
+		H.internal = H.get_item_for_held_index(2)
+		H.update_internals_hud_icon(1)
 
 /datum/outfit/job/get_chameleon_disguise_info()
 	var/list/types = ..()

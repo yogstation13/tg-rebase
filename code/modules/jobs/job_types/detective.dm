@@ -53,6 +53,8 @@
 		/obj/item/melee/classic_baton=1)
 	mask = /obj/item/clothing/mask/cigarette
 
+	plasmaman_uniform = /obj/item/clothing/under/plasmaman/enviroslacks
+
 	implants = list(/obj/item/implant/mindshield)
 
 	chameleon_extras = list(/obj/item/gun/ballistic/revolver/detective, /obj/item/clothing/glasses/sunglasses)

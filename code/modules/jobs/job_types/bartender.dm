@@ -36,6 +36,8 @@
 	backpack_contents = list(/obj/item/storage/box/beanbag=1)
 	shoes = /obj/item/clothing/shoes/laceup
 	
+	plasmaman_uniform = /obj/item/clothing/under/plasmaman/enviroslacks
+	
 /datum/outfit/job/bartender/post_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
 

@@ -35,6 +35,8 @@
 	uniform = /obj/item/clothing/under/rank/roboticist
 	suit = /obj/item/clothing/suit/toggle/labcoat
 
+	plasmaman_uniform = /obj/item/clothing/under/plasmaman/robotics
+
 	backpack = /obj/item/storage/backpack/science
 	satchel = /obj/item/storage/backpack/satchel/tox
 

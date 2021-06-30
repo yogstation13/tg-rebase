@@ -35,5 +35,7 @@
 	l_hand = /obj/item/clipboard
 	l_pocket = /obj/item/export_scanner
 
+	plasmaman_uniform = /obj/item/clothing/under/plasmaman/qm
+
 	chameleon_extras = /obj/item/stamp/qm
 

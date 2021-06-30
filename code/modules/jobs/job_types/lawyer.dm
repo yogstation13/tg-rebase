@@ -38,6 +38,8 @@
 	l_pocket = /obj/item/laser_pointer
 	r_pocket = /obj/item/clothing/accessory/lawyers_badge
 
+	plasmaman_uniform = /obj/item/clothing/under/plasmaman/enviroslacks
+
 	chameleon_extras = /obj/item/stamp/law
 
 

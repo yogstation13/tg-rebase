@@ -40,7 +40,11 @@
 	l_hand = /obj/item/storage/firstaid/regular
 	l_pocket =  /obj/item/pda/medical
 	gloves = /obj/item/clothing/gloves/color/latex
+
 	backpack = /obj/item/storage/backpack/medic
 	satchel = /obj/item/storage/backpack/satchel/med
 	duffelbag = /obj/item/storage/backpack/duffelbag/med
-	box = /obj/item/storage/box/survival_mining
+ 	box = /obj/item/storage/box/survival_mining
+
+	plasmaman_uniform = /obj/item/clothing/under/plasmaman/mining
+	plasmaman_head = /obj/item/clothing/head/helmet/space/plasmaman/blue
