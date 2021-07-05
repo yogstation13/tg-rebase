@@ -763,6 +763,7 @@
 #include "code\game\machinery\computer\medical.dm"
 #include "code\game\machinery\computer\Operating.dm"
 #include "code\game\machinery\computer\pod.dm"
+#include "code\game\machinery\primitiveprocessor.dm"
 #include "code\game\machinery\computer\prisoner.dm"
 #include "code\game\machinery\computer\robot.dm"
 #include "code\game\machinery\computer\security.dm"
