@@ -50,6 +50,12 @@
 	results = list(/datum/reagent/drug/aranesp = 3)
 	required_reagents = list(/datum/reagent/medicine/epinephrine = 1, /datum/reagent/medicine/atropine = 1, /datum/reagent/medicine/morphine = 1)
 
+/datum/chemical_reaction/ketamine
+	name = "Ketamine"
+	id = /datum/reagent/drug/ketamine
+	results = list(/datum/reagent/drug/ketamine = 3)
+	required_reagents = list(/datum/reagent/medicine/morphine = 3, /datum/reagent/toxin/chloralhydrate = 3, /datum/reagent/toxin/fentanyl = 3, /datum/reagent/medicine/epinephrine = 3)
+
 /datum/chemical_reaction/happiness
 	name = "Happiness"
 	id = /datum/reagent/drug/happiness

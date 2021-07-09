@@ -460,6 +460,73 @@
 		M.emote(pick("twitch","laugh","frown"))
 	..()
 	. = 1
+
+/datum/reagent/drug/ketamine
+	name = "Ketamine"
+	description = "A heavy duty tranquilizer found to also invoke feelings of euphoria, and assist with pain. Popular at parties and amongst small frogmen who drive Honda Civics."
+	reagent_state = LIQUID
+	color = "#c9c9c9"
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	addiction_threshold = 8
+	overdose_threshold = 16
+
+/datum/reagent/drug/ketamine/on_mob_metabolize(mob/living/L)
+	ADD_TRAIT(L, TRAIT_IGNOREDAMAGESLOWDOWN, type)
+	. = ..()
+
+/datum/reagent/drug/ketamine/on_mob_delete(mob/living/L)
+	REMOVE_TRAIT(L, TRAIT_IGNOREDAMAGESLOWDOWN, type)
+	. = ..()
+
+/datum/reagent/drug/ketamine/on_mob_life(mob/living/carbon/M)
+	//Friendly Reminder: Ketamine is a tranquilizer and will sleep you.
+	switch(current_cycle)
+		if(10)
+			to_chat(M, "<span class='warning'>You start to feel tired...</span>" )
+		if(11 to 25)
+			M.drowsyness ++
+		if(26 to INFINITY)
+			M.Sleeping(60, 0)
+			. = 1
+	//Providing a Mood Boost
+	M.confused -= 3
+	M.jitteriness -= 5
+	M.disgust -= 3
+
+	//Ketamine is also a dissociative anasthetic which means Hallucinations!
+	M.hallucination += 5
+	..()
+
+/datum/reagent/drug/ketamine/overdose_process(mob/living/M)
+	var/obj/item/organ/brain/B = M.getorgan(/obj/item/organ/brain)
+	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2*REM)
+	if(B.can_gain_trauma(/datum/brain_trauma/mild/hallucinations, 1))
+		B.brain_gain_trauma(/datum/brain_trauma/mild/hallucinations, 1)
+
+/datum/reagent/drug/ketamine/addiction_act_stage1(mob/living/M)
+	if(prob(20))
+		M.drop_all_held_items()
+		M.Jitter(2)
+	..()
+
+/datum/reagent/drug/ketamine/addiction_act_stage2(mob/living/M)
+	if(prob(30))
+		M.drop_all_held_items()
+		M.adjustToxLoss(2*REM, 0)
+		. = 1
+		M.Jitter(3)
+		M.Dizzy(3)
+	..()
+
+/datum/reagent/drug/ketamine/addiction_act_stage3(mob/living/M)
+	if(prob(40))
+		M.drop_all_held_items()
+		M.adjustToxLoss(3*REM, 0)
+		. = 1
+		M.Jitter(4)
+		M.Dizzy(4)
+	..()
+
 /datum/reagent/drug/pumpup
 	name = "Pump-Up"
 	description = "Take on the world! A fast acting, hard hitting drug that pushes the limit on what you can handle."
