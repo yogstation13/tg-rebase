@@ -20,6 +20,7 @@
 	power_channel = EQUIP
 	max_integrity = 300
 	integrity_failure = 100
+	var/insert_anim = "photocopier1"
 	var/obj/item/paper/copy = null	//what's in the copier!
 	var/obj/item/photo/photocopy = null
 	var/obj/item/documents/doccopy = null
@@ -55,7 +56,6 @@
 
 /obj/machinery/photocopier/proc/clearcolor(text) // Breaks all font color spans in the HTML text.
 	return replacetext(replacetext(text, "<font face=\"[CRAYON_FONT]\" color=", "<font face=\"[CRAYON_FONT]\" nocolor="), "<font face=\"[PEN_FONT]\" color=", "<font face=\"[PEN_FONT]\" nocolor=") //This basically just breaks the existing color tag, which we need to do because the innermost tag takes priority.
-
 
 /obj/machinery/photocopier/Topic(href, href_list)
 	if(..())
@@ -201,7 +201,7 @@
 /obj/machinery/photocopier/proc/do_insertion(obj/item/O, mob/user)
 	O.forceMove(src)
 	to_chat(user, "<span class ='notice'>You insert [O] into [src].</span>")
-	flick("photocopier1", src)
+	flick(insert_anim, src)
 	updateUsrDialog()
 
 /obj/machinery/photocopier/proc/remove_photocopy(obj/item/O, mob/user)
@@ -215,8 +215,7 @@
 /obj/machinery/photocopier/attackby(obj/item/O, mob/user, params)
 	if(default_unfasten_wrench(user, O))
 		return
-
-	else if(istype(O, /obj/item/paper))
+	else if(istype(O, /obj/item/paper) || istype(O, /obj/item/paper_bundle))
 		if(copier_empty())
 			if(istype(O, /obj/item/paper/contract/infernal))
 				to_chat(user, "<span class='warning'>[src] smokes, smelling of brimstone!</span>")
@@ -347,3 +346,54 @@
 	var/charges = 5
 	var/max_charges = 5
 
+/obj/machinery/photocopier/proc/copy(var/obj/item/paper/copy)
+	var/obj/item/paper/c = new /obj/item/paper (loc)
+	if(toner > 10)	//lots of toner, make it dark
+		c.info = "<font color = #101010>"
+	else			//no toner? shitty copies for you!
+		c.info = "<font color = #808080>"
+	var/copied = html_decode(copy.info)
+	clearcolor(copied)
+	c.name = copy.name
+	c.fields = copy.fields
+	c.update_icon()
+	c.stamps = copy.stamps
+	if(copy.stamped)
+		c.stamped = copy.stamped.Copy()
+	c.copy_overlays(copy, TRUE)
+	toner--
+	if(toner == 0)
+		visible_message("<span class='notice'>A red light on \the [src] flashes, indicating that it is out of toner.</span>")
+	return c
+
+
+/obj/machinery/photocopier/proc/photocopy(var/obj/item/photo/photocopy)
+	new /obj/item/photo (loc, photocopy.picture.Copy(greytoggle == "Greyscale"? TRUE : FALSE))
+	toner -= 5	//photos use a lot of ink!
+	if(toner < 0)
+		toner = 0
+		visible_message("<span class='notice'>A red light on \the [src] flashes, indicating that it is out of toner.</span>")
+
+//If need_toner is 0, the copies will still be lightened when low on toner, however it will not be prevented from printing. TODO: Implement print queues for fax machines and get rid of need_toner
+/obj/machinery/photocopier/proc/bundlecopy(var/obj/item/paper_bundle/bundle, var/need_toner=1)
+	var/obj/item/paper_bundle/p = new /obj/item/paper_bundle (src)
+	for(var/obj/item/W in bundle)
+		if(toner <= 0 && need_toner)
+			toner = 0
+			visible_message("<span class='notice'>A red light on \the [src] flashes, indicating that it is out of toner.</span>")
+			break
+
+		if(istype(W, /obj/item/paper))
+			W = copy(W)
+		else if(istype(W, /obj/item/photo))
+			W = photocopy(W)
+		W.loc = p
+		p.amount++
+	//p.amount--
+	p.loc = src.loc
+	p.update_icon()
+	p.icon_state = "paper_words"
+	p.name = bundle.name
+	p.pixel_y = rand(-8, 8)
+	p.pixel_x = rand(-9, 9)
+	return p
