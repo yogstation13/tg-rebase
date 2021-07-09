@@ -18,7 +18,6 @@ SUBSYSTEM_DEF(economy)
 	var/datum/station_state/engineering_check = new /datum/station_state()
 	var/alive_humans_bounty = 100
 	var/crew_safety_bounty = 1500
-	var/monster_bounty = 150
 	var/mood_bounty = 100
 	var/techweb_bounty = 25 // yogs start - nerf insane rd budget
 	var/slime_bounty = list("grey" = 10,
@@ -58,6 +57,9 @@ SUBSYSTEM_DEF(economy)
 /datum/controller/subsystem/economy/Initialize(timeofday)
 	var/budget_to_hand_out = round(budget_pool / department_accounts.len)
 	for(var/A in department_accounts)
+		if(A == ACCOUNT_SEC)
+			new /datum/bank_account/department(A, STARTING_SEC_BUDGET)
+			continue
 		new /datum/bank_account/department(A, budget_to_hand_out)
 	return ..()
 
@@ -106,10 +108,6 @@ SUBSYSTEM_DEF(economy)
 		D.adjust_money(500)
 
 /datum/controller/subsystem/economy/proc/secmedsrv_payout()
-	var/crew
-	var/alive_crew
-	var/dead_monsters
-	var/cash_to_grant
 	for(var/mob/m in GLOB.mob_list)
 		if(isnewplayer(m))
 			continue
@@ -118,9 +116,7 @@ SUBSYSTEM_DEF(economy)
 				continue
 			if(ishuman(m))
 				var/mob/living/carbon/human/H = m
-				crew++
 				if(H.stat != DEAD)
-					alive_crew++
 					var/datum/component/mood/mood = H.GetComponent(/datum/component/mood)
 					var/medical_cash = (H.health / H.maxHealth) * alive_humans_bounty
 					if(mood)
@@ -133,16 +129,7 @@ SUBSYSTEM_DEF(economy)
 					var/datum/bank_account/D = get_dep_account(ACCOUNT_MED)
 					if(D)
 						D.adjust_money(medical_cash)
-		if(ishostile(m))
-			var/mob/living/simple_animal/hostile/H = m
-			if(H.stat == DEAD && (H.z in SSmapping.levels_by_trait(ZTRAIT_STATION)))
-				dead_monsters++
 		CHECK_TICK
-	var/living_ratio = alive_crew / crew
-	cash_to_grant = (crew_safety_bounty * living_ratio) + (monster_bounty * dead_monsters)
-	var/datum/bank_account/D = get_dep_account(ACCOUNT_SEC)
-	if(D)
-		D.adjust_money(min(cash_to_grant, MAX_GRANT_SECMEDSRV))
 
 	var/service_passive_income = (rand(1, 6) * 400) //min 400, max 2400
 	var/datum/bank_account/SRV = get_dep_account(ACCOUNT_SRV)
