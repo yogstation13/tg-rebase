@@ -367,11 +367,8 @@ GLOBAL_LIST_INIT(typecache_cryoitems, typecacheof(list(
 		to_chat(user, "<span class='notice'>This person cannot be put in cryogenic storage!</span>")
 		return
 
-	if(target.client && user != target)
-		if(iscyborg(target))
-			to_chat(user, "<span class='danger'>You can't put [target] into [src]. They're online.</span>")
-		else
-			to_chat(user, "<span class='danger'>You can't put [target] into [src]. They're conscious.</span>")
+	if(user != target)
+		to_chat(user, "<span class='danger'>You are unable to cryo others.</span>")
 		return
 	else if(target.client)
 		if(alert(target,"Would you like to enter cryosleep?",,"Yes","No") == "No")
@@ -402,8 +399,7 @@ GLOBAL_LIST_INIT(typecache_cryoitems, typecacheof(list(
 
 	if(target == user)
 		visible_message("[user] starts climbing into the cryo pod.")
-	else
-		visible_message("[user] starts putting [target] into the cryo pod.")
+	
 	close_machine(target)
 	to_chat(target, "<span class='boldnotice'>If you ghost, log out or close your client now, your character will shortly be permanently removed from the round.</span>")
 	name = "[name] ([occupant.name])"
