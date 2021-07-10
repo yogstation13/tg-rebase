@@ -48740,7 +48740,7 @@
 /obj/item/roller{
 	pixel_y = 9
 	},
-/obj/item/roller{
+/obj/item/roller/stasis/prototype{
 	pixel_x = 5;
 	pixel_y = 13
 	},

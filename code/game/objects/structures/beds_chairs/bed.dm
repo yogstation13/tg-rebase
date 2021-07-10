@@ -55,6 +55,9 @@
 	anchored = FALSE
 	resistance_flags = NONE
 	var/foldabletype = /obj/item/roller
+	var/upicon = "up" //yogs start:  allows other roller beds to easily change their up/down icons without needing to name them "up" or "down"
+	var/downicon = "down"
+	var/isbuckled = FALSE //yogs end
 
 /obj/structure/bed/roller/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/roller/robo))
@@ -90,20 +93,31 @@
 		qdel(src)
 
 /obj/structure/bed/roller/post_buckle_mob(mob/living/M)
+	isbuckled = TRUE
 	density = TRUE
-	icon_state = "up"
 	M.pixel_y = initial(M.pixel_y)
+	update_bed_icon()
 
 /obj/structure/bed/roller/Moved()
 	. = ..()
 	if(has_gravity())
 		playsound(src, 'sound/effects/roll.ogg', 100, 1)
 
-/obj/structure/bed/roller/post_unbuckle_mob(mob/living/M)
+/obj/structure/bed/roller/post_unbuckle_mob(mob/living/M) //Yogs Start: Reworks how the up and down posiion is handeled to better work with roller beds that change icons with someone on it
+	isbuckled = FALSE
 	density = FALSE
-	icon_state = "down"
 	M.pixel_x = M.get_standard_pixel_x_offset(M.lying)
 	M.pixel_y = M.get_standard_pixel_y_offset(M.lying)
+	update_bed_icon()
+	
+
+/obj/structure/bed/roller/proc/update_bed_icon()
+	
+	if(isbuckled)
+		icon_state = upicon
+		
+	else
+		icon_state = downicon //Yogs End
 
 /obj/item/roller
 	name = "roller bed"
@@ -111,6 +125,7 @@
 	icon = 'icons/obj/rollerbed.dmi'
 	icon_state = "folded"
 	w_class = WEIGHT_CLASS_NORMAL // No more excuses, stop getting blood everywhere
+	var/unfoldabletype = /obj/structure/bed/roller //Yogs: Adde to allow for rollerbeds to use different folded versions without rewriting some procs
 
 /obj/item/roller/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I, /obj/item/roller/robo))
@@ -136,7 +151,7 @@
 		deploy_roller(user, target)
 
 /obj/item/roller/proc/deploy_roller(mob/user, atom/location)
-	var/obj/structure/bed/roller/R = new /obj/structure/bed/roller(location)
+	var/obj/structure/bed/roller/R = new unfoldabletype(location) //Yogs
 	R.add_fingerprint(user)
 	qdel(src)
 

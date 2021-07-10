@@ -3261,6 +3261,7 @@
 #include "yogstation\code\game\objects\structures\tables_racks.dm"
 #include "yogstation\code\game\objects\structures\window.dm"
 #include "yogstation\code\game\objects\structures\bar_stuff\bar_stuff.dm"
+#include "yogstation\code\game\objects\structures\beds_chairs\bed.dm"
 #include "yogstation\code\game\objects\structures\beds_chairs\chair.dm"
 #include "yogstation\code\game\objects\structures\beds_chairs\electric_bed.dm"
 #include "yogstation\code\game\objects\structures\signs\signs_plaques.dm"
