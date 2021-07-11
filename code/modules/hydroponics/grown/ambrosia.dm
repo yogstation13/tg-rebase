@@ -42,7 +42,7 @@
 	plantname = "Ambrosia Deus"
 	product = /obj/item/reagent_containers/food/snacks/grown/ambrosia/deus
 	mutatelist = list(/obj/item/seeds/ambrosia/gaia)
-	reagents_add = list(/datum/reagent/medicine/omnizine = 0.15, /datum/reagent/medicine/synaptizine = 0.15, /datum/reagent/drug/space_drugs = 0.1, /datum/reagent/consumable/nutriment = 0.05)
+	reagents_add = list(/datum/reagent/medicine/omnizine = 0.15, /datum/reagent/medicine/synaptizine = 0.15, /datum/reagent/drug/space_drugs = 0.1, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.05)
 	rarity = 40
 
 /obj/item/reagent_containers/food/snacks/grown/ambrosia/deus
@@ -62,7 +62,7 @@
 	plantname = "Ambrosia Gaia"
 	product = /obj/item/reagent_containers/food/snacks/grown/ambrosia/gaia
 	mutatelist = list(/obj/item/seeds/ambrosia/deus)
-	reagents_add = list(/datum/reagent/medicine/earthsblood = 0.05, /datum/reagent/consumable/nutriment = 0.06)
+	reagents_add = list(/datum/reagent/medicine/earthsblood = 0.05, /datum/reagent/consumable/nutriment = 0.06, /datum/reagent/consumable/nutriment/vitamin = 0.05)
 	rarity = 30 //These are some pretty good plants right here
 	genes = list()
 	weed_rate = 4
