@@ -81,7 +81,7 @@
 // curator
 /obj/machinery/modular_computer/console/preset/curator
 	console_department = "Civilian"
-	name = "curator console"
+	name = "art console"
 	desc = "A stationary computer. This one comes preloaded with art programs."
 	_has_printer = TRUE
 

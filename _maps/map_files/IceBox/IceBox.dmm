@@ -92,6 +92,12 @@
 /obj/machinery/holopad,
 /turf/open/floor/plasteel,
 /area/security/prison)
+"aan" = (
+/obj/machinery/modular_computer/console/preset/curator{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/library)
 "aao" = (
 /obj/machinery/light{
 	dir = 4
@@ -109892,7 +109898,7 @@ aHd
 aIx
 aJF
 aLh
-aIt
+aan
 aNV
 aNS
 aIt

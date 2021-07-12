@@ -1807,6 +1807,15 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/paramedic)
+"adl" = (
+/obj/machinery/computer/security/telescreen/entertainment{
+	pixel_y = -32
+	},
+/obj/machinery/modular_computer/console/preset/curator{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/library)
 "adq" = (
 /obj/structure/sign/directions/engineering{
 	desc = "A sign that shows there are doors here. There are doors everywhere!";
@@ -54792,12 +54801,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/security/courtroom)
-"bGs" = (
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = -32
-	},
-/turf/open/floor/plasteel/dark,
-/area/library)
 "bGt" = (
 /obj/item/twohanded/required/kirbyplants/random,
 /obj/item/radio/intercom{
@@ -158890,7 +158893,7 @@ bDz
 bFu
 cjH
 ctK
-bGs
+adl
 caG
 cea
 ceb

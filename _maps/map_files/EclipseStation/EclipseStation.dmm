@@ -45,6 +45,10 @@
 "aah" = (
 /turf/open/floor/plasteel/freezer,
 /area/crew_quarters/dorms/a)
+"aai" = (
+/obj/machinery/modular_computer/console/preset/curator,
+/turf/open/floor/carpet/exoticpurple,
+/area/library)
 "aaj" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -102954,7 +102958,7 @@ aFP
 aKR
 aLt
 aKR
-aNY
+aai
 aOD
 aNX
 bgE

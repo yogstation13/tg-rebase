@@ -13,6 +13,13 @@
 	},
 /turf/open/floor/plating,
 /area/crew_quarters/heads/hos)
+"aac" = (
+/obj/machinery/modular_computer/console/preset/curator{
+	dir = 1
+	},
+/obj/structure/railing,
+/turf/open/floor/wood,
+/area/library)
 "aad" = (
 /obj/machinery/gulag_processor,
 /turf/open/floor/plasteel,
@@ -55078,11 +55085,6 @@
 /obj/structure/tank_dispenser,
 /turf/open/floor/plasteel/dark,
 /area/engine/atmos)
-"rCR" = (
-/obj/structure/filingcabinet,
-/obj/structure/railing,
-/turf/open/floor/wood,
-/area/library)
 "rCT" = (
 /obj/machinery/atmospherics/components/binary/pump/on{
 	dir = 4;
@@ -109321,7 +109323,7 @@ ihg
 ffH
 jQY
 aIt
-rCR
+aac
 gOa
 aYW
 aYW
