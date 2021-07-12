@@ -229,6 +229,21 @@ GLOBAL_LIST_INIT(bibleitemstates, list("bible", "koran", "scrapbook", "burning",
 				EX.icon_state = "ghost1"
 				EX.name = "Purified [initial(EX.name)]"
 			user.visible_message("<span class='notice'>[user] has purified [SS]!</span>")
+	else if(istype(A, /obj/item/nullrod/scythe/talking))
+		var/obj/item/nullrod/scythe/talking/sword = A
+		to_chat(user, "<span class='notice'>You begin to exorcise [sword]...</span>")
+		playsound(src,'sound/hallucinations/veryfar_noise.ogg',40,TRUE)
+		if(do_after(user, 40, target = sword))
+			playsound(src,'sound/effects/pray_chaplain.ogg',60,TRUE)
+			for(var/mob/living/simple_animal/shade/S in sword.contents)
+				to_chat(S, "<span class='userdanger'>You were destroyed by the exorcism!</span>")
+				qdel(S)
+			sword.possessed = FALSE //allows the chaplain (or someone else) to reroll a new spirit for their sword
+			sword.name = initial(sword.name)
+			REMOVE_TRAIT(sword, TRAIT_NODROP, HAND_REPLACEMENT_TRAIT) //in case the "sword" is a possessed dummy
+			user.visible_message("<span class='notice'>[user] has exorcised [sword]!</span>", \
+								"<span class='notice'>You successfully exorcise [sword]!</span>")
+
 
 /obj/item/storage/book/bible/booze
 	desc = "To be applied to the head repeatedly."
