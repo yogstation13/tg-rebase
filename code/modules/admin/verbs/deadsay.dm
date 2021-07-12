@@ -22,9 +22,9 @@
 	var/rank_name = holder.rank
 	var/admin_name = key
 	if(holder.fakekey)
-		rank_name = pick(strings("admin_nicknames.json", "ranks", "config"))
-		admin_name = pick(strings("admin_nicknames.json", "names", "config"))
-	var/rendered = "<span class='game deadsay'><span class='prefix'>DEAD:</span> <span class='name'>[rank_name]([admin_name])</span> says, <span class='message'>\"[emoji_parse(msg)]\"</span></span>"
+		rank_name = holder.fakekey
+		admin_name = holder.fakename
+	var/rendered = "<span class='game deadsay'><span class='prefix'>DEAD:</span> <span class='name'>([rank_name]) [admin_name]</span> says, <span class='message'>\"[emoji_parse(msg)]\"</span></span>"
 
 	for (var/mob/M in GLOB.player_list)
 		if(isnewplayer(M) && !(M.client && M.client.holder)) // Yogs -- Allows admins to hear admin deadsay while in the lobby

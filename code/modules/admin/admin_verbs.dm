@@ -491,6 +491,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 			if(!new_key)
 				return
 			holder.fakekey = new_key
+			holder.fakename = random_unique_name(prob(50) ? MALE : FEMALE)
 			createStealthKey()
 			if(isobserver(mob))
 				mob.invisibility = INVISIBILITY_MAXIMUM //JUST IN CASE

@@ -312,6 +312,11 @@
 		observer.real_name = observer.client.prefs.real_name
 		observer.name = observer.real_name
 		observer.client.init_verbs()
+	if(observer?.client?.holder?.fakekey)
+		observer.invisibility = INVISIBILITY_MAXIMUM //JUST IN CASE
+		observer.alpha = 0 //JUUUUST IN CASE
+		observer.name = " "
+		observer.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	observer.update_icon()
 	observer.stop_sound_channel(CHANNEL_LOBBYMUSIC)
 	QDEL_NULL(mind)

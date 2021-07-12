@@ -278,6 +278,11 @@ Works together with spawning an observer, noted above.
 			ghost.can_reenter_corpse = can_reenter_corpse
 			ghost.key = key
 			ghost.client.init_verbs()
+			if(ghost?.client?.holder?.fakekey)
+				ghost.invisibility = INVISIBILITY_MAXIMUM //JUST IN CASE
+				ghost.alpha = 0 //JUUUUST IN CASE
+				ghost.name = " "
+				ghost.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 			return ghost
 
 /*
