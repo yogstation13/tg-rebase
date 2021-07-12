@@ -185,7 +185,8 @@
 		/obj/item/implant,
 		/obj/item/implanter,
 		/obj/item/pinpointer/crew,
-		/obj/item/holosign_creator/medical
+		/obj/item/holosign_creator/medical,
+		/obj/item/blood_filter
 		))
 
 /obj/item/storage/belt/security

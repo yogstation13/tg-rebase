@@ -73,6 +73,19 @@
 	toolspeed = 0.5
 	attack_verb = list("burnt")
 
+/obj/item/blood_filter
+	name = "blood filter"
+	desc = "For filtering the blood."
+	icon = 'icons/obj/surgery.dmi'
+	icon_state = "bloodfilter"
+	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+	custom_materials = list(/datum/material/iron=2000, /datum/material/glass=1500, /datum/material/silver=500)
+	flags_1 = CONDUCT_1
+	w_class = WEIGHT_CLASS_NORMAL
+	attack_verb = list("pumped", "siphoned")
+	tool_behaviour = TOOL_BLOODFILTER
+	toolspeed = 1
 
 /obj/item/surgicaldrill
 	name = "surgical drill"

@@ -9,7 +9,7 @@
 #define TOOL_MINING			"mining"
 #define TOOL_SHOVEL			"shovel"
 #define TOOL_HATCHET		"hatchet"
-
+#define TOOL_BLOODFILTER	"bloodfilter"
 
 // If delay between the start and the end of tool operation is less than MIN_TOOL_SOUND_DELAY,
 // tool sound is only played when op is started. If not, it's played twice.

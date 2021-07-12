@@ -372,6 +372,7 @@
 	new /obj/item/surgical_drapes(src)
 	new /obj/item/clothing/mask/surgical(src)
 	new /obj/item/razor(src)
+	new /obj/item/blood_filter(src)
 
 /obj/item/storage/backpack/duffelbag/sec
 	name = "security duffel bag"
@@ -392,6 +393,7 @@
 	new /obj/item/cautery(src)
 	new /obj/item/surgical_drapes(src)
 	new /obj/item/clothing/mask/surgical(src)
+	new /obj/item/blood_filter(src)
 
 /obj/item/storage/backpack/duffelbag/engineering
 	name = "industrial duffel bag"
