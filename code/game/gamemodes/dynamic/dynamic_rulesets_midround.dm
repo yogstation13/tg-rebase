@@ -527,7 +527,7 @@
 	required_enemies = list(2,2,1,1,1,1,0,0,0,0)
 	required_candidates = 1
 	weight = 1
-	cost = 20
+	cost = 101 // Was 20
 	requirements = list(90,85,80,75,70,65,60,55)
 	repeatable = TRUE
 	var/list/spawn_locs = list()
