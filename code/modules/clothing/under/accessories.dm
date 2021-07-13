@@ -360,3 +360,21 @@
 	above_suit = TRUE
 	armor = list("melee" = 5, "bullet" = 5, "laser" = 5, "energy" = 5, "bomb" = 20, "bio" = 20, "rad" = 5, "fire" = 0, "acid" = 25)
 	attachment_slot = GROIN
+
+//////////////
+//Ooh shiny!//
+//////////////
+
+/obj/item/clothing/accessory/sing_necklace
+	name = "\improper Singularity Shard Necklace"
+	desc = "The gem mounted inside seems to glow with an unearthly, pulsing light. It is bitter cold to the touch."
+	icon_state = "sing_necklace"
+	item_color = "sing_necklace"
+	above_suit = TRUE
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = -5, "fire" = 0, "acid" = 0) //It IS radioactive after all. Watch me get yelled at for powergaming because I'm making this my """donator""" item - Mqiib
+	attachment_slot = null
+	light_power = 2
+	light_range = 1.4 //Same as cosmic bedsheet
+	light_color = "#9E1F1F" //dim red
+	w_class = WEIGHT_CLASS_TINY
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF // Good luck destroying a singularity 
