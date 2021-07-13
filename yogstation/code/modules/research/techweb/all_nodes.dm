@@ -55,7 +55,7 @@
 	description = "Cutting up asteroids using your spacepods"
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 3500)
 	export_price = 500
-	prereq_ids = list("basic_mining", "spacepod_disabler")
+	prereq_ids = list("spacepod_disabler")
 	design_ids = list("pod_ka_basic")
 
 /datum/techweb_node/spacepod_advmining
@@ -64,7 +64,7 @@
 	description = "Cutting up asteroids using your spacepods.... faster!"
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 3500)
 	export_price = 3500
-	prereq_ids = list("spacepod_ka", "adv_mining")
+	prereq_ids = list("spacepod_ka")
 	design_ids = list("pod_ka", "pod_plasma_cutter")
 
 /datum/techweb_node/spacepod_advplasmacutter

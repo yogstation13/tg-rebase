@@ -42,26 +42,6 @@
 	category = list("Mining Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO
 
-/datum/design/plasmacutter
-	name = "Plasma Cutter"
-	desc = "You could use it to cut limbs off of xenos! Or, you know, mine stuff."
-	id = "plasmacutter"
-	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 1500, /datum/material/glass = 500, /datum/material/plasma = 1000, /datum/material/silver = 1000, /datum/material/uranium = 800)
-	build_path = /obj/item/gun/energy/plasmacutter
-	category = list("Mining Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_CARGO
-
-/datum/design/plasmacutter_adv
-	name = "Advanced Plasma Cutter"
-	desc = "It's an advanced plasma cutter, oh my god."
-	id = "plasmacutter_adv"
-	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 3000, /datum/material/glass = 1000, /datum/material/plasma = 2000, /datum/material/gold = 2000, /datum/material/uranium = 3000, /datum/material/diamond = 2000)
-	build_path = /obj/item/gun/energy/plasmacutter/adv
-	category = list("Mining Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_CARGO
-
 /datum/design/jackhammer
 	name = "Sonic Jackhammer"
 	desc = "Essentially a handheld planet-cracker. Can drill through walls with ease as well."
@@ -70,66 +50,6 @@
 	materials = list(/datum/material/iron = 6000, /datum/material/glass = 2000, /datum/material/silver = 2000, /datum/material/diamond = 6000)
 	build_path = /obj/item/pickaxe/drill/jackhammer
 	category = list("Mining Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_CARGO
-
-/datum/design/superresonator
-	name = "Upgraded Resonator"
-	desc = "An upgraded version of the resonator that allows more fields to be active at once."
-	id = "superresonator"
-	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 4000, /datum/material/glass = 1500, /datum/material/silver = 1000, /datum/material/uranium = 1000)
-	build_path = /obj/item/resonator/upgraded
-	category = list("Mining Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_CARGO
-
-/datum/design/trigger_guard_mod
-	name = "Kinetic Accelerator Trigger Guard Mod"
-	desc = "A device which allows kinetic accelerators to be wielded by any organism."
-	id = "triggermod"
-	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 2000, /datum/material/glass = 1500, /datum/material/gold = 1500, /datum/material/uranium = 1000)
-	build_path = /obj/item/borg/upgrade/modkit/trigger_guard
-	category = list("Mining Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_CARGO
-
-/datum/design/damage_mod
-	name = "Kinetic Accelerator Damage Mod"
-	desc = "A device which allows kinetic accelerators to deal more damage."
-	id = "damagemod"
-	build_type = PROTOLATHE | MECHFAB
-	materials = list(/datum/material/iron = 2000, /datum/material/glass = 1500, /datum/material/gold = 1500, /datum/material/uranium = 1000)
-	build_path = /obj/item/borg/upgrade/modkit/damage
-	category = list("Mining Designs", "Cyborg Upgrade Modules")
-	departmental_flags = DEPARTMENTAL_FLAG_CARGO
-
-/datum/design/cooldown_mod
-	name = "Kinetic Accelerator Cooldown Mod"
-	desc = "A device which decreases the cooldown of a Kinetic Accelerator."
-	id = "cooldownmod"
-	build_type = PROTOLATHE | MECHFAB
-	materials = list(/datum/material/iron = 2000, /datum/material/glass = 1500, /datum/material/gold = 1500, /datum/material/uranium = 1000)
-	build_path = /obj/item/borg/upgrade/modkit/cooldown
-	category = list("Mining Designs", "Cyborg Upgrade Modules")
-	departmental_flags = DEPARTMENTAL_FLAG_CARGO
-
-/datum/design/range_mod
-	name = "Kinetic Accelerator Range Mod"
-	desc = "A device which allows kinetic accelerators to fire at a further range."
-	id = "rangemod"
-	build_type = PROTOLATHE | MECHFAB
-	materials = list(/datum/material/iron = 2000, /datum/material/glass = 1500, /datum/material/gold = 1500, /datum/material/uranium = 1000)
-	build_path = /obj/item/borg/upgrade/modkit/range
-	category = list("Mining Designs", "Cyborg Upgrade Modules")
-	departmental_flags = DEPARTMENTAL_FLAG_CARGO
-
-/datum/design/hyperaccelerator
-	name = "Kinetic Accelerator Mining AoE Mod"
-	desc = "A modification kit for Kinetic Accelerators which causes it to fire AoE blasts that destroy rock."
-	id = "hypermod"
-	build_type = PROTOLATHE | MECHFAB
-	materials = list(/datum/material/iron = 8000, /datum/material/glass = 1500, /datum/material/silver = 2000, /datum/material/gold = 2000, /datum/material/diamond = 2000)
-	build_path = /obj/item/borg/upgrade/modkit/aoe/turfs
-	category = list("Mining Designs", "Cyborg Upgrade Modules")
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO
 
 /datum/design/miner_body_camera
