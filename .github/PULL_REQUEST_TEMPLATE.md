@@ -16,7 +16,7 @@ Remember: something that is self-evident to you might not be to others. Explain 
 # Wiki Documentation
 
 Remove this text and write all information regarding your changes that should be known and documented through the Yogstation Wiki. 
-Important documentation information includes, but is not limited to: any numberical values that have been changed, any images that have to be updated, names of specific pages that will be impacted by your changes. 
+Important documentation information includes, but is not limited to: any numerical values that have been changed, any images that have to be updated, names of specific pages that will be impacted by your changes. 
 
 # Changelog
 
