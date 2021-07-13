@@ -51,15 +51,15 @@
 
 //data HUD (medhud, sechud) defines
 //Don't forget to update human/New() if you change these!
-#define DATA_HUD_SECURITY_BASIC			1
-#define DATA_HUD_SECURITY_ADVANCED		2
-#define DATA_HUD_MEDICAL_BASIC			3
-#define DATA_HUD_MEDICAL_ADVANCED		4
-#define DATA_HUD_DIAGNOSTIC_BASIC		5
-#define DATA_HUD_DIAGNOSTIC_ADVANCED	6
-#define DATA_HUD_ABDUCTOR				7
-#define DATA_HUD_SENTIENT_DISEASE		8
-#define DATA_HUD_AI_DETECT				9
+#define DATA_HUD_SECURITY_BASIC				1
+#define DATA_HUD_SECURITY_ADVANCED			2
+#define DATA_HUD_MEDICAL_BASIC				3
+#define DATA_HUD_MEDICAL_ADVANCED			4
+#define DATA_HUD_DIAGNOSTIC_BASIC			5
+#define DATA_HUD_DIAGNOSTIC_ADVANCED		6
+#define DATA_HUD_ABDUCTOR					7
+#define DATA_HUD_SENTIENT_DISEASE			8
+#define DATA_HUD_AI_DETECT					9
 
 //antag HUD defines
 #define ANTAG_HUD_CULT			10

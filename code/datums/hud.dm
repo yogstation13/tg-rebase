@@ -111,7 +111,15 @@ GLOBAL_LIST_INIT(huds, list(
 	if(!A)
 		return FALSE
 	hudatoms |= A
+	var/has_camo = FALSE
+	if(istype(A, /mob))
+		var/mob/B = A
+		if(B.digitalcamo)
+			has_camo = TRUE
 	for(var/mob/M in hudusers)
+		if(has_camo)
+			if(istype(M, /mob/living/silicon))
+				return
 		if(!queued_to_see[M])
 			add_to_single_hud(M, A)
 	return TRUE
