@@ -380,10 +380,20 @@
 /mob/living/verb/succumb(whispered as null)
 	set hidden = TRUE
 	if (InCritical())
-		log_message("Has [whispered ? "whispered his final words" : "succumbed to death"] while in [InFullCritical() ? "hard":"soft"] critical with [round(health, 0.1)] points of health!", LOG_ATTACK)
+		if(alert("Are you sure you want to Succumb? (This will take 90 Seconds)",, "Yes", "No") != "Yes")
+			return
+		to_chat(src, "<span class='notice'>You have started to loosen the grip on this world you will die in about 90 seconds.</span>")
+		visible_message("<span class='notice'>[src] is losing their grip on this world.</span>")
+		addtimer(CALLBACK(src, .proc/succumbrequest, whispered), 90 SECONDS)
+
+/mob/living/proc/succumbrequest(whisperedtext)
+	if (InCritical())
+		if(alert("The timer has elapsed, do you still wish to succumb?",, "Yes", "No") != "Yes")
+			return
+		log_message("Has [whisperedtext ? "whispered his final words" : "succumbed to death"] while in [InFullCritical() ? "hard":"soft"] critical with [round(health, 0.1)] points of health!", LOG_ATTACK)
 		adjustOxyLoss(health - HEALTH_THRESHOLD_DEAD)
 		updatehealth()
-		if(!whispered)
+		if(!whisperedtext)
 			to_chat(src, "<span class='notice'>You have given up life and succumbed to death.</span>")
 		death()
 
@@ -1375,16 +1385,16 @@
 			sync_lighting_plane_alpha()
 
 /mob/living/proc/is_convert_antag()
-    var/list/bad_antags = list(
-        /datum/antagonist/clockcult,
-        /datum/antagonist/cult,
-        /datum/antagonist/darkspawn,
-        /datum/antagonist/rev,
-        /datum/antagonist/shadowling,
-        /datum/antagonist/veil
-    )
-    for(var/antagcheck in bad_antags)
-        if(mind?.has_antag_datum(antagcheck))
-            return TRUE
-    return FALSE
-
+	var/list/bad_antags = list(
+		/datum/antagonist/clockcult,
+		/datum/antagonist/cult,
+		/datum/antagonist/darkspawn,
+		/datum/antagonist/rev,
+		/datum/antagonist/shadowling,
+		/datum/antagonist/veil,
+		/datum/antagonist/thrall
+	)
+	for(var/antagcheck in bad_antags)
+		if(mind?.has_antag_datum(antagcheck))
+			return TRUE
+		return FALSE
