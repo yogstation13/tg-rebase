@@ -271,8 +271,8 @@
 	category = list("Exosuit Equipment")
 
 /datum/design/mech_missile_rack_ammo
-	name = "SRM-8 Missile Rack Ammunition"
-	desc = "Ammunition for the SRM-8 Missile Rack."
+	name = "BRM-8 Missile Rack Ammunition"
+	desc = "Ammunition for the BRM-8 Missile Rack."
 	id = "mech_missile_rack_ammo"
 	build_type = PROTOLATHE | MECHFAB
 	build_path = /obj/item/mecha_ammo/missiles_br
