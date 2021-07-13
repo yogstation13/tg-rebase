@@ -243,7 +243,8 @@
 	throw_speed = 3
 	throw_range = 4
 	throwforce = 10
-	w_class = WEIGHT_CLASS_TINY
+	slot_flags = ITEM_SLOT_BELT
+	w_class = WEIGHT_CLASS_SMALL
 	obj_flags = UNIQUE_RENAME
 	var/reskinned = FALSE
 	var/chaplain_spawnable = TRUE
