@@ -12,14 +12,14 @@
 		new /obj/item/storage/backpack(src)
 	else
 		new /obj/item/storage/backpack/satchel(src)
-	new /obj/item/radio/headset( src )
+	new /obj/item/radio/headset(src)
 
 /obj/structure/closet/secure_closet/personal/patient
 	name = "patient's closet"
 
 /obj/structure/closet/secure_closet/personal/patient/PopulateContents()
-	new /obj/item/clothing/under/color/white( src )
-	new /obj/item/clothing/shoes/sneakers/white( src )
+	new /obj/item/clothing/under/color/white(src)
+	new /obj/item/clothing/shoes/sneakers/white(src)
 
 /obj/structure/closet/secure_closet/personal/cabinet
 	icon_state = "cabinet"
@@ -29,7 +29,16 @@
 /obj/structure/closet/secure_closet/personal/cabinet/PopulateContents()
 	new /obj/item/storage/backpack/satchel/leather/withwallet( src )
 	new /obj/item/instrument/piano_synth(src)
-	new /obj/item/radio/headset( src )
+	new /obj/item/radio/headset(src)
+
+//miner personal closet
+/obj/structure/closet/secure_closet/personal/miner
+	desc = "Its a secure locker for shaft miners. The first card swiped gains control."
+	name = "miner personal closet"
+
+/obj/structure/closet/secure_closet/personal/miner/PopulateContents()
+	new /obj/item/pickaxe(src) //mining tools
+	new /obj/item/shovel(src) //mining tools
 
 /obj/structure/closet/secure_closet/personal/prisoner
 	desc = "It's a secure locker for prisoners. The first card swiped gains control."

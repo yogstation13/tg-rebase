@@ -36,8 +36,13 @@
 /area/mine/lobby
 	name = "Mining Station"
 
+/area/mine/infirmary
+	name = "Mining Station Infirmary"
+	icon_state = "mining_infirmary"
+
 /area/mine/storage
 	name = "Mining Station Storage"
+	icon_state = "mining_storage"
 
 /area/mine/production
 	name = "Mining Station Starboard Wing"
@@ -47,15 +52,28 @@
 	name = "Abandoned Mining Station"
 
 /area/mine/living_quarters
-	name = "Mining Station Port Wing"
+	name = "Mining Station Living Quarters"
 	icon_state = "mining_living"
+
+/area/mine/break_room
+	name = "Mining Station Break Room"
+	icon_state = "mining_breakroom"
 
 /area/mine/eva
 	name = "Mining Station EVA"
 	icon_state = "mining_eva"
 
+/area/mine/eva_secondary
+	name = "Mining Station Secondary EVA"
+	icon_state = "mining_eva_secondary"
+
 /area/mine/maintenance
 	name = "Mining Station Communications"
+	icon_state = "mining_engineering"
+
+/area/mine/vacant
+	name = "Mining Station Vacant Room"
+	icon_state = "mining_vacant"
 
 /area/mine/cafeteria
 	name = "Mining Station Cafeteria"
