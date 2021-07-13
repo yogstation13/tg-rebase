@@ -17,6 +17,7 @@ const MATERIAL_KEYS = {
   "bananium": "sheet-bananium",
   "titanium": "sheet-titanium_3",
   "bluespace crystal": "polycrystal",
+  "dilithium crystal": "dilithium_polycrystal", // Yogs: added dilithium to the list
   "plastic": "sheet-plastic_3",
 };
 
@@ -145,7 +146,7 @@ export const ExosuitFabricator = (props, context) => {
     <Window
       resizable
       title="Exosuit Fabricator"
-      width={1100}
+      width={1200} // Yogs: increesed this from 1100 to fit dilithium.
       height={640}>
       <Window.Content
         scrollable>

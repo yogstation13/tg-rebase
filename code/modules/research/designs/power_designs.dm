@@ -29,7 +29,7 @@
 	desc = "A power cell that holds 20 MJ of energy."
 	id = "super_cell"
 	build_type = PROTOLATHE | MECHFAB
-	materials = list(/datum/material/iron = 700, /datum/material/glass = 70)
+	materials = list(/datum/material/iron = 700, /datum/material/glass = 70, /datum/material/dilithium = 250) //Yogs: added dilithium
 	construction_time=100
 	build_path = /obj/item/stock_parts/cell/super/empty
 	category = list("Misc","Power Designs")
@@ -40,7 +40,7 @@
 	desc = "A power cell that holds 30 MJ of energy."
 	id = "hyper_cell"
 	build_type = PROTOLATHE | MECHFAB
-	materials = list(/datum/material/iron = 700, /datum/material/gold = 150, /datum/material/silver = 150, /datum/material/glass = 80)
+	materials = list(/datum/material/iron = 700, /datum/material/gold = 150, /datum/material/silver = 150, /datum/material/glass = 80, /datum/material/dilithium = 500) //Yogs: added dilithium
 	construction_time=100
 	build_path = /obj/item/stock_parts/cell/hyper/empty
 	category = list("Misc","Power Designs")
@@ -51,7 +51,7 @@
 	desc = "A power cell that holds 40 MJ of energy."
 	id = "bluespace_cell"
 	build_type = PROTOLATHE | MECHFAB
-	materials = list(/datum/material/iron = 800, /datum/material/gold = 120, /datum/material/glass = 160, /datum/material/diamond = 160, /datum/material/titanium = 300, /datum/material/bluespace = 100)
+	materials = list(/datum/material/iron = 800, /datum/material/gold = 120, /datum/material/glass = 160, /datum/material/diamond = 160, /datum/material/titanium = 300, /datum/material/bluespace = 100, /datum/material/dilithium = 500) //Yogs: added dilithium
 	construction_time=100
 	build_path = /obj/item/stock_parts/cell/bluespace/empty
 	category = list("Misc","Power Designs")

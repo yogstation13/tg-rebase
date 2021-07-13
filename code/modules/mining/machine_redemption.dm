@@ -18,7 +18,7 @@
 	var/ore_pickup_rate = 15
 	var/sheet_per_ore = 1
 	var/point_upgrade = 1
-	var/list/ore_values = list(/datum/material/glass = 1, /datum/material/iron = 1, /datum/material/plasma = 15, /datum/material/silver = 16, /datum/material/gold = 18, /datum/material/titanium = 30, /datum/material/uranium = 30, /datum/material/diamond = 50, /datum/material/bluespace = 50, /datum/material/bananium = 60)
+	var/list/ore_values = list(/datum/material/glass = 1, /datum/material/iron = 1, /datum/material/plasma = 15, /datum/material/silver = 16, /datum/material/gold = 18, /datum/material/titanium = 30, /datum/material/uranium = 30, /datum/material/diamond = 50, /datum/material/bluespace = 50, /datum/material/dilithium = 50, /datum/material/bananium = 60) //Yogs: added dilithium so it can be redeamed
 	var/message_sent = FALSE
 	var/list/ore_buffer = list()
 	var/datum/techweb/stored_research

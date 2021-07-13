@@ -192,3 +192,14 @@
 	victim.apply_damage(30, BURN, BODY_ZONE_HEAD)
 	source_item?.reagents?.add_reagent(/datum/reagent/toxin/plasma, source_item.reagents.total_volume*5)
 	return TRUE
+
+///Yogs///
+
+///Used for some batteries and in atmospherics to lower the required temperature for fusion
+/datum/material/dilithium
+	name = "dilithium crystal"
+	id = "dilithium_crystal"
+	desc = "Crystals with dilithium properties"
+	color = "#506bc7"
+	categories = list(MAT_CATEGORY_ORE = TRUE)
+	sheet_type = /obj/item/stack/sheet/dilithium_crystal
