@@ -6,6 +6,8 @@
 	fitted = NO_FEMALE_UNIFORM
 	mutantrace_variation = MUTANTRACE_VARIATION
 	can_adjust = FALSE
+	mutantrace_variation = MUTANTRACE_VARIATION //Yogs Start: Digilegs alt stuff
+	digiversion = TRUE //Yogs End
 
 /obj/item/clothing/under/shorts/red
 	name = "red athletic shorts"

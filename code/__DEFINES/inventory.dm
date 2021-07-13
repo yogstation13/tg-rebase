@@ -150,6 +150,7 @@
 #define NORMAL_STYLE		0
 #define ALT_STYLE			1
 #define DIGITIGRADE_STYLE 	2
+#define DIGIALT_STYLE       3		//Yogs
 
 //flags for digitigrade checks related to footwear. Only Human accessible / Both accessible / Only funny leg accessible.
 #define NO_DIGIT			0

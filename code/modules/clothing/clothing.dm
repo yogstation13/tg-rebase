@@ -271,11 +271,17 @@ BLIND     // can't see anything
 		H.update_inv_w_uniform()
 		H.update_body()
 
-/obj/item/clothing/under/proc/toggle_jumpsuit_adjust()
-	if(adjusted == DIGITIGRADE_STYLE)
-		return
-	adjusted = !adjusted
-	if(adjusted)
+/obj/item/clothing/under/proc/toggle_jumpsuit_adjust() //Yogs Start: Reworking this to allow for Digialt to function
+	switch(adjusted)
+		if(NORMAL_STYLE)
+			adjusted = ALT_STYLE
+		if(ALT_STYLE)
+			adjusted = NORMAL_STYLE
+		if(DIGITIGRADE_STYLE)
+			adjusted = DIGIALT_STYLE
+		if(DIGIALT_STYLE)
+			adjusted = DIGITIGRADE_STYLE
+	if(adjusted == NORMAL_STYLE || adjusted == DIGIALT_STYLE) //Yogs End
 		if(fitted != FEMALE_UNIFORM_TOP)
 			fitted = NO_FEMALE_UNIFORM
 		if(!alt_covers_chest) // for the special snowflake suits that expose the chest when adjusted

@@ -7,6 +7,9 @@
 	has_sensor = NO_SENSORS
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 	alt_covers_chest = TRUE
+	mutantrace_variation = MUTANTRACE_VARIATION //Yogs Start: Digilegs alt stuff
+	digiversion = TRUE
+	digiadjusted = TRUE //Yogs End
 
 /obj/item/clothing/under/syndicate/tacticool
 	name = "tacticool turtleneck"
@@ -24,6 +27,7 @@
 	item_state = "bl_suit"
 	item_color = "black_suit"
 	can_adjust = FALSE
+	digiadjusted = FALSE //Yogs: Digilegs alt stuff
 
 /obj/item/clothing/under/syndicate/camo
 	name = "camouflage fatigues"
@@ -32,6 +36,7 @@
 	item_state = "g_suit"
 	item_color = "camogreen"
 	can_adjust = FALSE
+	digiadjusted = FALSE //Yogs: Digilegs alt stuff
 
 /obj/item/clothing/under/syndicate/soviet
 	name = "Ratnik 5 tracksuit"
@@ -41,6 +46,7 @@
 	can_adjust = FALSE
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	resistance_flags = NONE
+	digiadjusted = FALSE //Yogs: Digilegs alt stuff
 
 /obj/item/clothing/under/syndicate/combat
 	name = "combat uniform"
@@ -48,6 +54,7 @@
 	icon_state = "syndicate_combat"
 	item_color = "syndicate_combat"
 	can_adjust = FALSE
+	digiadjusted = FALSE //Yogs: Digilegs alt stuff
 
 /obj/item/clothing/under/syndicate/rus_army
 	name = "advanced military tracksuit"
@@ -57,3 +64,6 @@
 	can_adjust = FALSE
 	armor = list("melee" = 5, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	resistance_flags = NONE
+	mutantrace_variation = NO_MUTANTRACE_VARIATION //Yogs Start: Digilegs alt stuff
+	digiversion = FALSE
+	digiadjusted = FALSE //Yogs End

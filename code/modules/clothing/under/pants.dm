@@ -4,6 +4,8 @@
 	fitted = NO_FEMALE_UNIFORM
 	can_adjust = FALSE
 	custom_price = 20
+	mutantrace_variation = MUTANTRACE_VARIATION //Yogs Start: Digilegs alt stuff
+	digiversion = TRUE //Yogs End
 
 /obj/item/clothing/under/pants/classicjeans
 	name = "classic jeans"

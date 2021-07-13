@@ -1,5 +1,8 @@
 /obj/item/clothing/under/color
 	desc = "A standard issue colored jumpsuit. Variety is the spice of life!"
+	mutantrace_variation = MUTANTRACE_VARIATION //Yogs Start: Digilegs alt stuff
+	digiversion = TRUE //Yogs Start: Digilegs alt stuff
+	digiadjusted = TRUE //Yogs End
 
 /obj/item/clothing/under/skirt/color
 	body_parts_covered = CHEST|GROIN|ARMS

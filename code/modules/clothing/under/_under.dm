@@ -18,6 +18,9 @@
 	var/freshly_laundered = FALSE
 	var/dodgy_colours = FALSE
 	tearable = TRUE //all jumpsuits can be torn down and used for cloth in an emergency | yogs
+	
+	var/digiversion = FALSE //Yogs Start: Does this peice of clothing have a digitigrade alt? It should have _l at the end or things will break
+	var/digiadjusted = FALSE //Yogs End: Does this peice of clothing have an adjusted digitigrade alt? It should have _d_l at the end or things will break
 
 /obj/item/clothing/under/worn_overlays(isinhands = FALSE)
 	. = list()
@@ -69,18 +72,30 @@
 		if(!alt_covers_chest)
 			body_parts_covered |= CHEST
 
-	if(mutantrace_variation && ishuman(user))
-		var/mob/living/carbon/human/H = user
-		if(DIGITIGRADE in H.dna.species.species_traits)
-			adjusted = DIGITIGRADE_STYLE
-		H.update_inv_w_uniform()
-
 	if(slot == SLOT_W_UNIFORM && freshly_laundered)
 		freshly_laundered = FALSE
 		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "fresh_laundry", /datum/mood_event/fresh_laundry)
 
-	if(attached_accessory && slot != SLOT_HANDS && ishuman(user))
-		var/mob/living/carbon/human/H = user
+	if(!ishuman(user)) //Yogs Start: Reorganized to reduce repetition
+		return
+	var/mob/living/carbon/human/H = user
+	
+	if(mutantrace_variation || digiversion || digiadjusted)
+		var/is_digi = FALSE
+		if(DIGITIGRADE in H.dna.species.species_traits)
+			is_digi = TRUE
+		
+		if((is_digi && !adjusted == ALT_STYLE) && (mutantrace_variation || digiversion))
+			adjusted = DIGITIGRADE_STYLE
+		else if(is_digi && adjusted == ALT_STYLE && digiadjusted) //Handles when you are using an alternate style while having digi legs
+			adjusted = DIGIALT_STYLE
+		else if(!(is_digi) && adjusted == DIGITIGRADE_STYLE)
+			adjusted = NORMAL_STYLE
+		else if(!(is_digi) && adjusted == DIGIALT_STYLE)
+			adjusted = ALT_STYLE
+		H.update_inv_w_uniform()
+//Yogs End
+	if(attached_accessory && slot != SLOT_HANDS)
 		attached_accessory.on_uniform_equip(src, user)
 		if(attached_accessory.above_suit)
 			H.update_inv_wear_suit()
@@ -156,7 +171,7 @@
 	if(freshly_laundered)
 		. += "It looks fresh and clean."
 	if(can_adjust)
-		if(adjusted == ALT_STYLE)
+		if(adjusted == ALT_STYLE || adjusted == DIGIALT_STYLE)
 			. += "Alt-click on [src] to wear it normally."
 		else
 			. += "Alt-click on [src] to wear it casually."

@@ -123,6 +123,8 @@ There are several things that need to be remembered:
 			t_color = "[t_color]_d"
 		else if(U.adjusted == DIGITIGRADE_STYLE)
 			t_color = "[t_color]_l"
+		else if(U.adjusted == DIGIALT_STYLE) //Yogs Start: Handles when you are using an alternate style while having digi legs
+			t_color = "[t_color]_d_l" //Yogs End
 
 		var/mutable_appearance/uniform_overlay
 
