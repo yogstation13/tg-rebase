@@ -144,12 +144,10 @@ GLOBAL_LIST_EMPTY(telecomms_list)
 	else
 		on = FALSE
 
-/obj/machinery/telecomms/process()
-	update_power()
 
-	// Update the icon
-	update_icon()
-
+/obj/machinery/telecomms/proc/update_speed()
+	if(!on)
+		return
 	var/turf/T = get_turf(src) //yogs
 	var/speedloss = 0
 	var/datum/gas_mixture/env = T.return_air()
@@ -164,8 +162,6 @@ GLOBAL_LIST_EMPTY(telecomms_list)
 			var/ratio = 1000/netspeed			// temp per one unit of speedloss
 			speedloss = round((temperature - 150)/ratio)	// exact speedloss
 			net_efective = 100 - speedloss/netspeed		// percantage speedloss ui use only
-	//yogs end
-
 
 	if(traffic > 0)
 		var/deltaT = netspeed - speedloss  //yogs start
@@ -176,6 +172,14 @@ GLOBAL_LIST_EMPTY(telecomms_list)
 			traffic -= deltaT
 		if(generates_heat && env.heat_capacity())
 			env.set_temperature(env.return_temperature() + deltaT * heatoutput / env.heat_capacity())   //yogs end
+
+/obj/machinery/telecomms/process()
+	update_power()
+
+	// Update the icon
+	update_icon()
+	update_speed()
+
 
 
 /obj/machinery/telecomms/emp_act(severity)
