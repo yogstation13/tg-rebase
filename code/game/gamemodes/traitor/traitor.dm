@@ -76,15 +76,15 @@
 
 /datum/game_mode/traitor/post_setup()
 	for(var/datum/mind/traitor in pre_traitors)
-		var/datum/antagonist/traitor/new_antag = new antag_datum()
-		addtimer(CALLBACK(traitor, /datum/mind.proc/add_antag_datum, new_antag), rand(10,100))
+		addtimer(CALLBACK(src, /datum/game_mode/traitor.proc/add_traitor_delayed, traitor), rand(3 MINUTES, (5 MINUTES + 10 SECONDS)))
+		
 	if(!exchange_blue)
 		exchange_blue = -1 //Block latejoiners from getting exchange objectives
 	..()
 
 	//We're not actually ready until all traitors are assigned.
 	gamemode_ready = FALSE
-	addtimer(VARSET_CALLBACK(src, gamemode_ready, TRUE), 101)
+	addtimer(VARSET_CALLBACK(src, gamemode_ready, TRUE), (5 MINUTES + 11 SECONDS))
 	return TRUE
 
 /datum/game_mode/traitor/make_antag_chance(mob/living/carbon/human/character) //Assigns traitor to latejoiners
@@ -98,6 +98,47 @@
 				if(age_check(character.client))
 					if(!(character.job in restricted_jobs))
 						add_latejoin_traitor(character.mind)
+
+/datum/game_mode/traitor/proc/add_traitor_delayed(datum/mind/traitor)
+	if(!traitor || !traitor.current || !traitor.current.client || (traitor.current.stat != CONSCIOUS) || istype(traitor.current.loc, /obj/machinery/cryopod))
+		create_new_traitor()
+		return
+	var/datum/antagonist/traitor/new_antag = new antag_datum()
+	traitor.add_antag_datum(new_antag)
+
+/datum/game_mode/traitor/proc/create_new_traitor()
+	var/list/potential_candidates = list()
+	for(var/mob/living/carbon/human/applicant in GLOB.player_list)
+		if(!applicant.client)
+			continue
+		if(!applicant.mind)
+			continue
+		if(!applicant.stat != CONSCIOUS)
+			continue
+		if(applicant.mind.assigned_role in protected_jobs) 
+			continue
+		if(applicant.mind.assigned_role in restricted_jobs) 
+			continue
+		if(applicant.mind.quiet_round)
+			continue
+		if(HAS_TRAIT(applicant, TRAIT_MINDSHIELD))
+			continue
+		if(is_banned_from(applicant.ckey, list(antag_flag, ROLE_SYNDICATE)))
+			continue
+		if(!(antag_flag in applicant.client.prefs.be_special))
+			continue
+		if(!age_check(applicant.client))
+			continue
+		potential_candidates += applicant
+	if(!potential_candidates)
+		message_admins("Failed to find new antag after original one left! Check the antag balance please.")
+		return
+	var/mob/living/carbon/human/picked = pick(potential_candidates)
+	if(!picked || !picked.client)
+		return
+	var/datum/antagonist/traitor/new_antag = new antag_datum()
+	picked.mind.add_antag_datum(new_antag)
+	picked.mind.special_role = traitor_name
 
 /datum/game_mode/traitor/proc/add_latejoin_traitor(datum/mind/character)
 	var/datum/antagonist/traitor/new_antag = new antag_datum()
