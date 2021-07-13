@@ -231,9 +231,9 @@
 			if(prev_damage < BRAIN_DAMAGE_MILD && damage >= BRAIN_DAMAGE_MILD)
 				to_chat(owner, "<span class='warning'>You feel lightheaded.</span>")
 			else if(prev_damage < BRAIN_DAMAGE_SEVERE && damage >= BRAIN_DAMAGE_SEVERE)
-				to_chat(owner, "<span class='warning'>You feel less in control of your thoughts.</span>")
+				to_chat(owner, "<span class='danger'>You feel less in control of your thoughts.</span>")
 			else if(prev_damage < (BRAIN_DAMAGE_DEATH - 20) && damage >= (BRAIN_DAMAGE_DEATH - 20))
-				to_chat(owner, "<span class='warning'>You can feel your mind flickering on and off...</span>")
+				to_chat(owner, "<span class='userdanger'>You can feel your mind flickering on and off...</span>")
 	//update our previous damage holder after we've checked our boundaries
 	prev_damage = damage
 	return
