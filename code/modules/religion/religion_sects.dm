@@ -112,7 +112,7 @@
 	convert_opener = "May you find peace in a metal shell, acolyte.<br>Bibles now recharge cyborgs and heal robotic limbs if targeted, but they do not heal organic limbs. You can now sacrifice cells, with favor depending on their charge."
 	alignment = ALIGNMENT_NEUT
 	desired_items = list(/obj/item/stock_parts/cell)
-	rites_list = list(/datum/religion_rites/synthconversion)
+	rites_list = list(/datum/religion_rites/synthconversion, /datum/religion_rites/machine_blessing)
 	altar_icon_state = "convertaltar-blue"
 
 /datum/religion_sect/technophile/sect_bless(mob/living/L, mob/living/user)
